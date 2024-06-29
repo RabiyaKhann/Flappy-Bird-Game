@@ -230,3 +230,10 @@ if __name__ == "__main__":
     while True:
         welcomeScreen() # Shows welcome screen to the user until he presses a button
         mainGame() # This is the main game function 
+
+    # Start the game on a specific port
+    PORT = 8080
+    server_address = ('', PORT)
+    print(f"Starting server on port {PORT}...")
+    httpd = HTTPServer(server_address, SimpleHTTPRequestHandler)
+    httpd.serve_forever()
