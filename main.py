@@ -2,6 +2,10 @@ import random # For generating random numbers
 import sys # We will use sys.exit to exit the program
 import pygame
 from pygame.locals import * # Basic pygame imports
+import os
+
+# Set environment variable to use dummy audio driver
+os.environ['SDL_AUDIODRIVER'] = 'dummy'
 
 # Global Variables for the game
 FPS = 32
