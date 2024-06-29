@@ -186,6 +186,12 @@ def getRandomPipe():
 if __name__ == "__main__":
     # This will be the main point from where our game will start
     pygame.init() # Initialize all pygame's modules
+    pygame.mixer.init()
+    try:
+       pygame.mixer.init()
+    except pygame.error as e:
+       print(f"Error initializing Pygame mixer: {e}")
+       sys.exit(1)
     FPSCLOCK = pygame.time.Clock()
     pygame.display.set_caption('Flappy Bird by RabiyaKhan')
     GAME_SPRITES['numbers'] = ( 
